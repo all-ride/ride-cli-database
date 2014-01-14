@@ -1,0 +1,59 @@
+{
+    "dependencies": [
+        {
+            "interfaces": "pallo\\library\\cli\\command\\Command", 
+            "class": "pallo\\cli\\command\\database\\DatabaseConnectionCommand",
+            "calls": ["setDatabaseManager"]
+        },
+        {
+            "interfaces": "pallo\\library\\cli\\command\\Command",
+            "class": "pallo\\cli\\command\\database\\DatabaseConnectionCreateCommand",
+            "calls": ["setDatabaseManager", "setLog"]
+        },
+        {
+            "interfaces": "pallo\\library\\cli\\command\\Command",
+            "class": "pallo\\cli\\command\\database\\DatabaseConnectionDefaultCommand",
+            "calls": ["setDatabaseManager"]
+        },
+        {
+            "interfaces": "pallo\\library\\cli\\command\\Command",
+            "class": "pallo\\cli\\command\\database\\DatabaseConnectionDropCommand",
+            "calls": ["setDatabaseManager", "setLog"]
+        },
+        {
+            "interfaces": "pallo\\library\\cli\\command\\Command",
+            "class": "pallo\\cli\\command\\database\\DatabaseConnectionRegisterCommand",
+            "calls": ["setDatabaseManager"]
+        },
+        {
+            "interfaces": "pallo\\library\\cli\\command\\Command",
+            "class": "pallo\\cli\\command\\database\\DatabaseConnectionStatusCommand",
+            "calls": ["setDatabaseManager"]
+        },
+        {
+            "interfaces": "pallo\\library\\cli\\command\\Command",
+            "class": "pallo\\cli\\command\\database\\DatabaseConnectionUnregisterCommand",
+            "calls": ["setDatabaseManager"]
+        },
+        {
+            "interfaces": "pallo\\library\\cli\\command\\Command",
+            "class": "pallo\\cli\\command\\database\\DatabaseDriverCommand",
+            "calls": ["setDatabaseManager"]
+        },
+        {
+            "interfaces": "pallo\\library\\cli\\command\\Command",
+            "class": "pallo\\cli\\command\\database\\DatabaseDriverRegisterCommand",
+            "calls": ["setDatabaseManager"]
+        },
+        {
+            "interfaces": "pallo\\library\\cli\\command\\Command",
+            "class": "pallo\\cli\\command\\database\\DatabaseDriverUnregisterCommand",
+            "calls": ["setDatabaseManager"]
+        },
+        {
+            "interfaces": "pallo\\library\\cli\\command\\Command",
+            "class": "pallo\\cli\\command\\database\\QueryCommand",
+            "calls": ["setDatabaseManager"]
+        }
+    ]
+}

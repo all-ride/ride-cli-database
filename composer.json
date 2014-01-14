@@ -1,0 +1,22 @@
+{
+    "name": "pallo/cli-database",
+    "description": "Database commands for the Pallo CLI",
+    "license": "MIT",
+    "version": "0.1.0",
+    "authors": [
+        {
+            "name": "Joris Vandeweerd",
+            "email": "joris@statik.be"
+        }
+    ],
+    "require": {
+        "pallo/lib-cli": ">=0.1.0",
+        "pallo/lib-database": ">=0.1.0",
+        "pallo/lib-log": ">=0.2.0"
+    }, 
+    "autoload": {
+        "psr-0": {
+            "pallo\\cli\\command\\database\\": ["src/"]
+        }
+    }
+}
