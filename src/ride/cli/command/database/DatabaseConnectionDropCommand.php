@@ -1,8 +1,8 @@
 <?php
 
-namespace pallo\cli\command\database;
+namespace ride\cli\command\database;
 
-use pallo\library\database\Dsn;
+use ride\library\database\Dsn;
 
 /**
  * Command to drop a database of a registered connection

@@ -1,58 +1,58 @@
 {
     "dependencies": [
         {
-            "interfaces": "pallo\\library\\cli\\command\\Command", 
-            "class": "pallo\\cli\\command\\database\\DatabaseConnectionCommand",
+            "interfaces": "ride\\library\\cli\\command\\Command", 
+            "class": "ride\\cli\\command\\database\\DatabaseConnectionCommand",
             "calls": ["setDatabaseManager"]
         },
         {
-            "interfaces": "pallo\\library\\cli\\command\\Command",
-            "class": "pallo\\cli\\command\\database\\DatabaseConnectionCreateCommand",
+            "interfaces": "ride\\library\\cli\\command\\Command",
+            "class": "ride\\cli\\command\\database\\DatabaseConnectionCreateCommand",
             "calls": ["setDatabaseManager", "setLog"]
         },
         {
-            "interfaces": "pallo\\library\\cli\\command\\Command",
-            "class": "pallo\\cli\\command\\database\\DatabaseConnectionDefaultCommand",
+            "interfaces": "ride\\library\\cli\\command\\Command",
+            "class": "ride\\cli\\command\\database\\DatabaseConnectionDefaultCommand",
             "calls": ["setDatabaseManager"]
         },
         {
-            "interfaces": "pallo\\library\\cli\\command\\Command",
-            "class": "pallo\\cli\\command\\database\\DatabaseConnectionDropCommand",
+            "interfaces": "ride\\library\\cli\\command\\Command",
+            "class": "ride\\cli\\command\\database\\DatabaseConnectionDropCommand",
             "calls": ["setDatabaseManager", "setLog"]
         },
         {
-            "interfaces": "pallo\\library\\cli\\command\\Command",
-            "class": "pallo\\cli\\command\\database\\DatabaseConnectionRegisterCommand",
+            "interfaces": "ride\\library\\cli\\command\\Command",
+            "class": "ride\\cli\\command\\database\\DatabaseConnectionRegisterCommand",
             "calls": ["setDatabaseManager"]
         },
         {
-            "interfaces": "pallo\\library\\cli\\command\\Command",
-            "class": "pallo\\cli\\command\\database\\DatabaseConnectionStatusCommand",
+            "interfaces": "ride\\library\\cli\\command\\Command",
+            "class": "ride\\cli\\command\\database\\DatabaseConnectionStatusCommand",
             "calls": ["setDatabaseManager"]
         },
         {
-            "interfaces": "pallo\\library\\cli\\command\\Command",
-            "class": "pallo\\cli\\command\\database\\DatabaseConnectionUnregisterCommand",
+            "interfaces": "ride\\library\\cli\\command\\Command",
+            "class": "ride\\cli\\command\\database\\DatabaseConnectionUnregisterCommand",
             "calls": ["setDatabaseManager"]
         },
         {
-            "interfaces": "pallo\\library\\cli\\command\\Command",
-            "class": "pallo\\cli\\command\\database\\DatabaseDriverCommand",
+            "interfaces": "ride\\library\\cli\\command\\Command",
+            "class": "ride\\cli\\command\\database\\DatabaseDriverCommand",
             "calls": ["setDatabaseManager"]
         },
         {
-            "interfaces": "pallo\\library\\cli\\command\\Command",
-            "class": "pallo\\cli\\command\\database\\DatabaseDriverRegisterCommand",
+            "interfaces": "ride\\library\\cli\\command\\Command",
+            "class": "ride\\cli\\command\\database\\DatabaseDriverRegisterCommand",
             "calls": ["setDatabaseManager"]
         },
         {
-            "interfaces": "pallo\\library\\cli\\command\\Command",
-            "class": "pallo\\cli\\command\\database\\DatabaseDriverUnregisterCommand",
+            "interfaces": "ride\\library\\cli\\command\\Command",
+            "class": "ride\\cli\\command\\database\\DatabaseDriverUnregisterCommand",
             "calls": ["setDatabaseManager"]
         },
         {
-            "interfaces": "pallo\\library\\cli\\command\\Command",
-            "class": "pallo\\cli\\command\\database\\QueryCommand",
+            "interfaces": "ride\\library\\cli\\command\\Command",
+            "class": "ride\\cli\\command\\database\\QueryCommand",
             "calls": ["setDatabaseManager"]
         }
     ]

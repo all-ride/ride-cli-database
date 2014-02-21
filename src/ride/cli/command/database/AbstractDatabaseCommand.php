@@ -1,10 +1,10 @@
 <?php
 
-namespace pallo\cli\command\database;
+namespace ride\cli\command\database;
 
-use pallo\library\cli\command\AbstractCommand;
-use pallo\library\database\DatabaseManager;
-use pallo\library\log\Log;
+use ride\library\cli\command\AbstractCommand;
+use ride\library\database\DatabaseManager;
+use ride\library\log\Log;
 
 /**
  * Abstract database command
@@ -13,19 +13,19 @@ abstract class AbstractDatabaseCommand extends AbstractCommand {
 
     /**
      * Instance of the database manager
-     * @var pallo\library\database\DatabaseManager
+     * @var ride\library\database\DatabaseManager
      */
     protected $databaseManager;
 
     /**
      * Instance of the log
-     * @var pallo\library\log\Log
+     * @var ride\library\log\Log
      */
     protected $log;
 
     /**
      * Sets the instance of the database manager
-     * @param pallo\library\database\DatabaseManager $databaseManager
+     * @param ride\library\database\DatabaseManager $databaseManager
      * @return null
      */
     public function setDatabaseManager(DatabaseManager $databaseManager) {
@@ -34,7 +34,7 @@ abstract class AbstractDatabaseCommand extends AbstractCommand {
 
     /**
      * Sets the instance of the log
-     * @param pallo\library\log\Log $log
+     * @param ride\library\log\Log $log
      * @return null
      */
     public function setLog(Log $log) {
