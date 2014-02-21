@@ -1,9 +1,9 @@
 <?php
 
-namespace pallo\cli\command\database;
+namespace ride\cli\command\database;
 
-use pallo\library\cli\exception\CliException;
-use pallo\library\database\Dsn;
+use ride\library\cli\exception\CliException;
+use ride\library\database\Dsn;
 
 /**
  * Command to create the database of a registered connection

@@ -1,8 +1,8 @@
 <?php
 
-namespace pallo\cli\command\database;
+namespace ride\cli\command\database;
 
-use pallo\library\database\result\DatabaseResult;
+use ride\library\database\result\DatabaseResult;
 
 /**
  * Console command to execute a SQL query
@@ -22,8 +22,8 @@ class QueryCommand extends AbstractDatabaseCommand {
 
     /**
      * Executes the command
-     * @param pallo\core\console\InputValue $input The input
-     * @param pallo\core\console\output\Output $output Output interface
+     * @param ride\core\console\InputValue $input The input
+     * @param ride\core\console\output\Output $output Output interface
      * @return null
      */
     public function execute() {
@@ -39,7 +39,7 @@ class QueryCommand extends AbstractDatabaseCommand {
 
     /**
      * Writes the database result to the output
-     * @param pallo\library\database\DatabaseResult $result
+     * @param ride\library\database\DatabaseResult $result
      * @return null
      */
     protected function writeResult(DatabaseResult $result) {

@@ -1,8 +1,8 @@
 <?php
 
-namespace pallo\cli\command\database;
+namespace ride\cli\command\database;
 
-use pallo\library\database\exception\DatabaseException;
+use ride\library\database\exception\DatabaseException;
 
 /**
  * Command to show the status of a connection

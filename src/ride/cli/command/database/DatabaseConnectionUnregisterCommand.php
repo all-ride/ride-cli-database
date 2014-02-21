@@ -1,6 +1,6 @@
 <?php
 
-namespace pallo\cli\command\database;
+namespace ride\cli\command\database;
 
 /**
  * Command to unregister a driver
