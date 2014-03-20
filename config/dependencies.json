@@ -12,6 +12,11 @@
         },
         {
             "interfaces": "ride\\library\\cli\\command\\Command",
+            "class": "ride\\cli\\command\\database\\DatabaseConnectionConvertUtf8Command",
+            "calls": ["setDatabaseManager", "setLog"]
+        },
+        {
+            "interfaces": "ride\\library\\cli\\command\\Command",
             "class": "ride\\cli\\command\\database\\DatabaseConnectionDefaultCommand",
             "calls": ["setDatabaseManager"]
         },
