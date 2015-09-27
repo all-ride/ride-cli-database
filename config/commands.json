@@ -1,0 +1,53 @@
+{
+    "commands": [
+        {
+            "name": "database",
+            "aliases": "db",
+            "class": "ride\\cli\\command\\database\\ConnectionCommand"
+        },
+        {
+            "name": "database convert utf8",
+            "aliases": "dbutf8",
+            "class": "ride\\cli\\command\\database\\ConnectionConvertUtf8Command"
+        },
+        {
+            "name": "database create",
+            "aliases": "dbc",
+            "class": "ride\\cli\\command\\database\\ConnectionCreateCommand"
+        },
+        {
+            "name": "database default",
+            "aliases": "dbdef",
+            "class": "ride\\cli\\command\\database\\ConnectionDefaultCommand"
+        },
+        {
+            "name": "database drop",
+            "aliases": "dbdr",
+            "class": "ride\\cli\\command\\database\\ConnectionDropCommand"
+        },
+        {
+            "name": "database add",
+            "aliases": "dba",
+            "class": "ride\\cli\\command\\database\\ConnectionRegisterCommand"
+        },
+        {
+            "name": "database status",
+            "aliases": "dbs",
+            "class": "ride\\cli\\command\\database\\ConnectionStatusCommand"
+        },
+        {
+            "name": "database delete",
+            "aliases": "dbd",
+            "class": "ride\\cli\\command\\database\\ConnectionUnregisterCommand"
+        },
+        {
+            "name": "database driver",
+            "class": "ride\\cli\\command\\database\\DriverCommand"
+        },
+        {
+            "name": "database query",
+            "aliases": ["dbq", "query"],
+            "class": "ride\\cli\\command\\database\\QueryCommand"
+        }
+    ]
+}

@@ -1,64 +1,16 @@
 {
     "dependencies": [
         {
-            "interfaces": "ride\\library\\cli\\command\\Command", 
-            "class": "ride\\cli\\command\\database\\DatabaseConnectionCommand",
-            "calls": ["setDatabaseManager"]
+            "interfaces": "ride\\library\\cli\\command\\Command",
+            "class": "ride\\cli\\command\\database\\ConnectionCreateCommand",
+            "calls": ["setLog"],
+            "tags": "exclude"
         },
         {
             "interfaces": "ride\\library\\cli\\command\\Command",
-            "class": "ride\\cli\\command\\database\\DatabaseConnectionCreateCommand",
-            "calls": ["setDatabaseManager", "setLog"]
-        },
-        {
-            "interfaces": "ride\\library\\cli\\command\\Command",
-            "class": "ride\\cli\\command\\database\\DatabaseConnectionConvertUtf8Command",
-            "calls": ["setDatabaseManager", "setLog"]
-        },
-        {
-            "interfaces": "ride\\library\\cli\\command\\Command",
-            "class": "ride\\cli\\command\\database\\DatabaseConnectionDefaultCommand",
-            "calls": ["setDatabaseManager"]
-        },
-        {
-            "interfaces": "ride\\library\\cli\\command\\Command",
-            "class": "ride\\cli\\command\\database\\DatabaseConnectionDropCommand",
-            "calls": ["setDatabaseManager", "setLog"]
-        },
-        {
-            "interfaces": "ride\\library\\cli\\command\\Command",
-            "class": "ride\\cli\\command\\database\\DatabaseConnectionRegisterCommand",
-            "calls": ["setDatabaseManager"]
-        },
-        {
-            "interfaces": "ride\\library\\cli\\command\\Command",
-            "class": "ride\\cli\\command\\database\\DatabaseConnectionStatusCommand",
-            "calls": ["setDatabaseManager"]
-        },
-        {
-            "interfaces": "ride\\library\\cli\\command\\Command",
-            "class": "ride\\cli\\command\\database\\DatabaseConnectionUnregisterCommand",
-            "calls": ["setDatabaseManager"]
-        },
-        {
-            "interfaces": "ride\\library\\cli\\command\\Command",
-            "class": "ride\\cli\\command\\database\\DatabaseDriverCommand",
-            "calls": ["setDatabaseManager"]
-        },
-        {
-            "interfaces": "ride\\library\\cli\\command\\Command",
-            "class": "ride\\cli\\command\\database\\DatabaseDriverRegisterCommand",
-            "calls": ["setDatabaseManager"]
-        },
-        {
-            "interfaces": "ride\\library\\cli\\command\\Command",
-            "class": "ride\\cli\\command\\database\\DatabaseDriverUnregisterCommand",
-            "calls": ["setDatabaseManager"]
-        },
-        {
-            "interfaces": "ride\\library\\cli\\command\\Command",
-            "class": "ride\\cli\\command\\database\\QueryCommand",
-            "calls": ["setDatabaseManager"]
+            "class": "ride\\cli\\command\\database\\ConnectionDropCommand",
+            "calls": ["setLog"],
+            "tags": "exclude"
         }
     ]
 }
