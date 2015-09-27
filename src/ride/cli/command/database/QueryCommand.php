@@ -2,55 +2,68 @@
 
 namespace ride\cli\command\database;
 
+use ride\cli\command\AbstractCommand;
+
 use ride\library\database\result\DatabaseResult;
+use ride\library\database\DatabaseManager;
+use ride\library\system\System;
+
+use \Exception;
 
 /**
- * Console command to execute a SQL query
+ * Command to execute an SQL query on a database connection
  */
-class QueryCommand extends AbstractDatabaseCommand {
+class QueryCommand extends AbstractCommand {
 
     /**
-     * Constructs a new query command
+     * Initializes the command
      * @return null
      */
-    public function __construct() {
-        parent::__construct('query', 'Executes a SQL query on the default database connection.');
+    protected function initialize() {
+        $this->setDescription('Executes a SQL query on the default database connection.');
 
         $this->addFlag('connection', 'Name of the connection to use');
         $this->addArgument('sql', 'The SQL script to execute', false, true);
     }
 
     /**
-     * Executes the command
-     * @param ride\core\console\InputValue $input The input
-     * @param ride\core\console\output\Output $output Output interface
+     * Invokes the command
+     * @param \ride\library\database\DatabaseManager $databaseManager
+     * @param \ride\library\system\System $system
+     * @param string $sql
      * @return null
      */
-    public function execute() {
+    public function invoke(DatabaseManager $databaseManager, System $system, $sql) {
         $connection = $this->input->getFlag('connection');
-        $sql = $this->input->getArgument('sql');
-
-        $connection = $this->databaseManager->getConnection($connection);
+        $connection = $databaseManager->getConnection($connection);
 
         $result = $connection->execute($sql);
 
-        $this->writeResult($result);
+        $this->writeResult($system, $result);
     }
 
     /**
      * Writes the database result to the output
-     * @param ride\library\database\DatabaseResult $result
+     * @param \ride\library\system\System $system
+     * @param \ride\library\database\result\DatabaseResult $result
      * @return null
      */
-    protected function writeResult(DatabaseResult $result) {
+    protected function writeResult(System $system, DatabaseResult $result) {
         if (!$result->getRowCount()) {
             return null;
+        }
+
+        try {
+            $output = $system->execute('tput cols');
+            $maxColumnWidth = array_shift($output);
+        } catch (Exception $exception) {
+            $maxColumnWidth = 120;
         }
 
         $columns = $result->getColumns();
 
         $widths = $this->calculateColumnWidths($result);
-        $widths = $this->optimizeColumnWidths($widths, 80);
+        $widths = $this->optimizeColumnWidths($widths, $maxColumnWidth);
 
         $separator = array();
         foreach ($columns as $column) {
@@ -66,7 +79,14 @@ class QueryCommand extends AbstractDatabaseCommand {
         $this->output->writeLine($this->getRowOutput($separator, $widths, '-'));
     }
 
-    protected function getRowOutput($values, array $widths, $char = ' ') {
+    /**
+     * Gets the output for one row
+     * @param array $values Values for the columns
+     * @param array $widths Widths of the columns in number of characters
+     * @param string $char Char to fill up the column value
+     * @return string Row output
+     */
+    protected function getRowOutput(array $values, array $widths, $char = ' ') {
         $lines = 1;
         foreach ($values as $column => $value) {
             $lines = max($lines, ceil(strlen($value) / $widths[$column]));
@@ -95,16 +115,22 @@ class QueryCommand extends AbstractDatabaseCommand {
         return substr($row, 0, -1);
     }
 
+    /**
+     * Optimizes the provided widths for a maximum width
+     * @param array $widths Array with the column widths
+     * @param integer $maxWidth Maximum width
+     * @return array Array with the optimized column widths
+     */
     protected function optimizeColumnWidths(array $widths, $maxWidth) {
-        $numCols = count($widths) / 2;
-        $minWidth = floor($maxWidth / $numCols);
-
+        $maxWidth -= count($widths) + 1; // remove separators
+        $minWidth = floor($maxWidth / (count($widths) / 2)) - 1;
         $remain = 0;
 
         $optimizeWidths = array();
         foreach ($widths as $column => $width) {
             if ($width <= $minWidth) {
                 $remain += $minWidth - $width;
+
                 continue;
             }
 
@@ -120,6 +146,11 @@ class QueryCommand extends AbstractDatabaseCommand {
         return $widths;
     }
 
+    /**
+     * Calculates the column widths based on the result values
+     * @param \ride\library\database\result\DatabaseResult $result
+     * @return array Array with the column index as key and the width as value
+     */
     protected function calculateColumnWidths(DatabaseResult $result) {
         $widths = array();
 
@@ -137,6 +168,7 @@ class QueryCommand extends AbstractDatabaseCommand {
         $i = 0;
         foreach ($widths as $width) {
             $widths[$i] = $width;
+
             $i++;
         }
 
