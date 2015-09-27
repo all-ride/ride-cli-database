@@ -1,16 +1,12 @@
 {
     "dependencies": [
         {
-            "interfaces": "ride\\library\\cli\\command\\Command",
             "class": "ride\\cli\\command\\database\\ConnectionCreateCommand",
-            "calls": ["setLog"],
-            "tags": "exclude"
+            "calls": ["setLog"]
         },
         {
-            "interfaces": "ride\\library\\cli\\command\\Command",
             "class": "ride\\cli\\command\\database\\ConnectionDropCommand",
-            "calls": ["setLog"],
-            "tags": "exclude"
+            "calls": ["setLog"]
         }
     ]
 }
