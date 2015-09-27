@@ -59,7 +59,7 @@ class ConnectionCreateCommand extends AbstractCommand {
             throw new CliException('This command is currently implemented for MySQL connections only');
         }
 
-        $driver = $this->databaseManager->getDriver($protocol);
+        $driver = $databaseManager->getDriver($protocol);
 
         $database = $dsn->getDatabase();
         $dsn = new Dsn(substr((string) $dsn, 0, strlen($database) * -1) . 'mysql');
