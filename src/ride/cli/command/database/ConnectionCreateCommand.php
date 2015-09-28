@@ -49,7 +49,7 @@ class ConnectionCreateCommand extends AbstractCommand {
      * @param string $collation
      * @return null
      */
-    public function invoke(DatabaseManager $databaseManager, $name = null, $charset = 'utf8', $collaction = 'utf8_general_ci') {
+    public function invoke(DatabaseManager $databaseManager, $name = null, $charset = 'utf8', $collation = 'utf8_general_ci') {
         $connection = $databaseManager->getConnection($name, false);
 
         $dsn = $connection->getDsn();
