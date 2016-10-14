@@ -2,7 +2,6 @@
     "name": "ride/cli-database",
     "description": "Database commands for the Ride CLI",
     "license": "MIT",
-    "version": "0.3.2",
     "authors": [
         {
             "name": "Joris Vandeweerd",
@@ -10,11 +9,13 @@
         }
     ],
     "require": {
-	"ride/cli": ">=0.6.0",
-        "ride/lib-cli": ">=0.1.0",
-        "ride/lib-database": ">=0.1.0",
-        "ride/lib-log": ">=0.2.0"
-    }, 
+        "ride/app": "^1.0.0",
+        "ride/app-database": "^1.0.0",
+        "ride/cli": "^1.0.0",
+        "ride/lib-cli": "^1.0.0",
+        "ride/lib-database": "^1.0.0",
+        "ride/lib-log": "^1.0.0"
+    },
     "autoload": {
         "psr-0": {
             "ride\\cli\\command\\database\\": ["src/"]
