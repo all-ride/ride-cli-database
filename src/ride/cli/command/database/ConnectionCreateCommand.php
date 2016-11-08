@@ -62,7 +62,7 @@ class ConnectionCreateCommand extends AbstractCommand {
         $driver = $databaseManager->getDriver($protocol);
 
         $database = $dsn->getDatabase();
-        $dsn = new Dsn(substr((string) $dsn, 0, strlen($database) * -1) . 'mysql');
+        $dsn = new Dsn(substr((string) $dsn, 0, strlen($database) * -1) . 'information_schema');
 
         $connection = new $driver($dsn);
         if ($this->log) {
