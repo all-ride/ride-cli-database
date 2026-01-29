@@ -38,7 +38,7 @@ class ConnectionCreateCommand extends AbstractCommand {
 
         $this->addArgument('name', 'Name of the connection', false);
         $this->addArgument('charset', 'Default charset for the database (default utf8)', false);
-        $this->addArgument('collation', 'Default collation for the database (default utf8_general_ci)', false);
+        $this->addArgument('collation', 'Default collation for the database (default utf8mb4_0900_ai_ci)', false);
     }
 
     /**
@@ -49,7 +49,7 @@ class ConnectionCreateCommand extends AbstractCommand {
      * @param string $collation
      * @return null
      */
-    public function invoke(DatabaseManager $databaseManager, $name = null, $charset = 'utf8', $collation = 'utf8_general_ci') {
+    public function invoke(DatabaseManager $databaseManager, $name = null, $charset = 'utf8', $collation = 'utf8mb4_0900_ai_ci') {
         $connection = $databaseManager->getConnection($name, false);
 
         $dsn = $connection->getDsn();
